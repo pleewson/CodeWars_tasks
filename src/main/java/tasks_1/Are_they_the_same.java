@@ -89,7 +89,16 @@ public class Are_they_the_same {
             }
         }
  */
-
+/*
+//check rootedSquareB to a
+        for(int i = 0; i < rootedSquareB.length; i++){
+            if(rootedSquareB[i] == a[i]){
+            }else{
+                return false;
+            }
+        }
+ */
+        
         return Arrays.equals(rootedA,b);
     }
 }
