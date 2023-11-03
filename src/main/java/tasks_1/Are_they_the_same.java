@@ -23,82 +23,17 @@ public class Are_they_the_same {
             return false;
         }
 
-//check if b array have negative number
-        for(int i = 0; i < b.length; i++){
-            if(b[i] < 0){
-                return false;  //a negative number cant be square rooted
-            }
-        }
-
-//create new arrays to comparsion
+//create new array to comparsion
         int[] rootedA = new int [a.length];
-        int[] rootedSquareB = new int [b.length];
-
-
-    //seems good but its not helping.
-//check duplicates
-        int duplicatesA = 0;
-        int duplicatesB = 0;
-
-//how many duplicates A
-        for(int i = 1; i < a.length; i++){
-            for(int j = i; j < a.length; j++){
-                if(a[i-1] == a[j]){
-                    duplicatesA++;
-                    break;
-                }
-            }
-        }
-
-//how many duplicates B
-        for(int i = 1; i < b.length; i++){
-            for(int j = i; j < b.length; j++){
-                if(b[i-1] == b[j]){
-                    duplicatesB++;
-                    break;
-                }
-            }
-        }
-
-        if(duplicatesA != duplicatesB){
-            return false;
-        }
-
 
 //a square
         for(int i = 0; i < a.length; i++){
             rootedA[i] = a[i] * a[i];
         }
 
-//b square root
-        for(int i = 0; i < b.length; i++){
-            rootedSquareB[i] = (int) Math.sqrt(b[i]);
-        }
-
         Arrays.sort(rootedA);
-        Arrays.sort(rootedSquareB);
-        Arrays.sort(a);
         Arrays.sort(b);
 
-/*
-//check rootedA to b
-        for(int i = 0; i < rootedA.length; i++){
-            if(rootedA[i] == b[i]){
-            }else{
-                return false;
-            }
-        }
- */
-/*
-//check rootedSquareB to a
-        for(int i = 0; i < rootedSquareB.length; i++){
-            if(rootedSquareB[i] == a[i]){
-            }else{
-                return false;
-            }
-        }
- */
-        
         return Arrays.equals(rootedA,b);
     }
 }
